@@ -1,93 +1,87 @@
 function showSignUpForm() {
-    const loginForm = document.getElementById("login-form");
+    const loginForm = document.getElementById("log-form");
     loginForm.style.display = "none";
-    const signUpForm = document.getElementById("signup-form");
+    const signUpForm = document.getElementById("sign-form");
     signUpForm.style.display = "block";
 }
 
 function showLoginForm() {
-    const signUpForm = document.getElementById("signup-form");
+    const signUpForm = document.getElementById("sign-form");
     signUpForm.style.display = "none";
-    const loginForm = document.getElementById("login-form");
+    const loginForm = document.getElementById("log-form");
     loginForm.style.display = "block";
 }
-
-jQuery('#login-form').validate(
-    {
-        rules:{
-            // name:"required",
-            email:"required"
-        },
-        messages:{
-            // name:"Please enter your name"
-        }
-    }
-);
-
 
 $(document).ready(function () {
     $("#signup-form").validate({
         rules: {
-            username: {
+            "signup-username": {
                 required: true,
-                minlength: 3,
+                minlength: 5
             },
-            email: {
+            "signup-email": {
                 required: true,
-                email: true,
+                email: true
             },
-            password: {
+            "signup-password": {
                 required: true,
-                minlength: 5,
+                minlength: 6
             },
-            agree: {
+            "agree": {
                 required: true,
-            },
-        },
-        messages: {
-            username: {
-                required: "Please enter your name",
-                minlength: "Your name must be at least 3 characters long",
-            },
-            email: {
-                required: "Please enter your email",
-                email: "Please enter a valid email address",
-            },
-            password: {
-                required: "Please enter your password",
-                minlength: "Your password must be at least 5 characters long",
-            },
-            agree: {
-                required: "You must agree to the terms and conditions",
-            },
-        },
-        submitHandler: function (form) {
-            // Clear any previous error messages
-            $(".error").html("");
-
-            // Extract the form data
-            var formData = $(form).serialize();
-            console.log("Form data:", formData);
-
-            // Simulate a login check (replace this with your actual login logic)
-            // For demonstration purposes, always show an alert for now
-            alert("Form submitted successfully!");
-        },
-        showErrors: function (errorMap, errorList) {
-            // Display all errors next to their respective input fields
-            this.defaultShowErrors();
-
-            for (var error of errorList) {
-                var element = $(error.element);
-                var errorMessage = error.message;
-                var errorId = "error-message-" + element.attr("id");
-                $("#" + errorId).html(errorMessage);
             }
         },
+        messages: {
+            "signup-username": {
+                required: "Please enter your Username",
+                minlength: "Username must be at least 5 Characters long"
+            },
+            "signup-email": {
+                required: "Please enter your Email",
+                email: "Please enter a valid Email Address"
+            },
+            "signup-password": {
+                required: "Please enter your Password",
+                minlength: "Password must be at least 6 Characters long"
+            },
+            "agree": {
+                required: "Accept the terms and conditions"
+            }
+        },
+        errorPlacement: function (error, element) {
+            if (element.attr("name") === "agree") {
+                error.appendTo("#agree-error");
+            } else {
+                error.insertAfter(element);
+            }
+        },
+        errorClass: "error",
+        validClass: "valid",
+        errorElement: "div"
     });
 
-    $("#login-btn").click(function () {
-        // Trigger form validation when the login button is clicked
-        $("#signup-form").valid();
+    $("#login-form").validate({
+        rules: {
+            "login-email": {
+                required: true,
+                email: true
+            },
+            "login-password": {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            "login-email": {
+                required: "Please enter your Email",
+                email: "Please enter a valid Email Address"
+            },
+            "login-password": {
+                required: "Please enter your Password"
+            }
+        },
+        errorClass: "error",
+        validClass: "valid",
+        errorElement: "div"
     });
 });

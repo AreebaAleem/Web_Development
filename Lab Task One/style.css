@@ -12,3 +12,10 @@ h1 {
     max-height: 200px;
 }
 
+.error {
+    color: #dc3545 !important;
+}
+
+.valid {
+    border-color: #28a745 !important;
+}
