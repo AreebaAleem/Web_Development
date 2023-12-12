@@ -34,3 +34,4 @@ module.exports.getAllProducts = getAllProducts;
 module.exports.deleteProduct = deleteProduct;
 module.exports.updateProduct = updateProduct;
 
+// restful api using express and with array

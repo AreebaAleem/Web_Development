@@ -38,3 +38,5 @@ app.post("/api/products", function (req, res) {
 });
 
 app.listen(3000);
+
+// crud operations
