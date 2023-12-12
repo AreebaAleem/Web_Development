@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yume-galler.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="validation.js" defer></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Nunito:wght@200&family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header id="home">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 border-bottom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-2" href="index.html">Yume-<span class="text-primary">GALLER</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+      </div>
+    </div>
+      <button type="button" class="btn btn-outline-success ml-3" onclick="window.location.href='login.html'">LOGIN</button>
+  </nav>
+
+          <div class="carousel-form">
+            <img src="img/welcome.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-cap4 d-md-block">
+              <h1 class="display-5 font-weight-bold ">Happy to have u as a Part of our Family!</h1>
+            </div>
+          </div>
+
+</header>
+
+<div class="container py-5 mt-5" id="log-form">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <h1 class="card-title text-center py-5 mb-4 bg-info text-danger">LOGIN</h1>
+        <div class="card-body">
+          <form  id="login-form">
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" name="login-email" required placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" name="login-password" required placeholder="Enter Password">
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Log In</button>
+            </div>
+            <div class="text-center mt-3">
+              <a href="#" class="text-muted text-decoration-none">Forgot Password?</a>
+            </div>
+            <div class="text-center mt-3">
+              Don't have an account? <a href="javascript:void(0);" class="text-decoration-none" id="show-signup" onclick="showSignUpForm()">Sign up!</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5 mt-5" id="sign-form" style="display: none;">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <h1 class="card-title text-center py-5 mb-2 bg-info text-danger">SIGN UP</h1>
+        <div class="card-body">
+          <p class="text-center mb-5">To become a part of our community, Please Sign Up using your personal information.</p>
+          <form id="signup-form">
+            <div class="mb-3">
+              <label for="signup-username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="signup-username" name="signup-username" required placeholder="Enter a Username">
+            </div>
+
+            <div class="mb-3">
+              <label for="signup-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="signup-email"  name="signup-email" required placeholder="Enter a valid email">
+            </div>
+            <div class="mb-3">
+              <label for="signup-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="signup-password"  name="signup-password" required placeholder="Enter a Password">
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+            <div class="text-center mt-3">
+              <input class="form-check-input" type="checkbox" id="agree" name="agree" required>
+              <label class="form-check-label" for="agree">
+              I agree to the <a href="#" class="text-success text-decoration-none">Terms & Conditions.</a>
+              <div id="agree-error" class="text-danger"></div>
+
+              </label>
+            </div>
+            <div class="text-center mt-3">
+              Already have an account? <a href="javascript:void(0);" class="text-decoration-none" id="show-login" onclick="showLoginForm()">Login!</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary text-light p-4 fs-6">
+  <div class="row">
+    <div class="col text-left">
+      Yume-<span class="text-primary">GALLER</span> © 2023 Developed by <span class="text-warning">SP21-BCS-061</span>
+      </div>
+      <div class="col text-center">
+  <i class="fa fa-whatsapp bg-success p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-youtube bg-danger p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-facebook bg-primary p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-instagram bg-warning p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-pinterest bg-danger p-1 text-white rounded fs-5"></i>
+</div>
+<div class="col text-center justify-content-end">
+  <i class="fa fa-cc-paypal bg-primary p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-cc-jcb bg-danger p-1 text-white rounded fs-5"></i>
+  <i class="fa fa-cc-visa bg-info p-1 text-white rounded fs-5"></i>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
