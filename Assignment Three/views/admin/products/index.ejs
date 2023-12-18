@@ -1,0 +1,26 @@
+<h2>Products Admin CRUD</h2>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <a href="/admin/products/add" class="btn btn-info">Add New Product</a>
+        <% if (products.length==0) { %>
+         <tr><td colspan="3">No Data to list</td></tr>
+        <% } %>
+        <% for( let index = 0; index < products.length; index++ ) { %>
+            <tr>
+                <td><%= products[index].name %></td>
+                <td><%= products[index].price %></td>
+                <td>
+                    <a href="/admin/products/edit/<%= products[index]._id %>" class="btn btn-warning">Edit</a>
+                    <a href="/admin/products/delete/<%= products[index]._id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
