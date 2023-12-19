@@ -57,8 +57,16 @@ h1 {
 
 .carousel-cap4{
     position: absolute;
-    top: 35%;
+    top: 45%;
     transform: translateY(-50%);
     color: rgb(6, 0, 0);
     right:20%;
+}
+
+.hidden-navbar {
+    display: none;
+}
+
+.btn-outline-success {
+    margin-left: 10px;
 }
