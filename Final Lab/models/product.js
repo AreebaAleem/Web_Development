@@ -16,4 +16,3 @@ let modelSchema = mongoose.Schema({
 });
 let Product = mongoose.model("Product", modelSchema);
 module.exports = Product;
-// module.exports.Product = Product;

@@ -1,9 +1,9 @@
-<div class="text-center mb-5">
-    <a href="/admin/products/add" class="btn btn-danger btn-lg">Add Products</a>
+<div class="text-center mt-5 mb-5">
+    <a href="products/add" class="btn btn-info btn-lg">Add</a>
   </div>  
 
 <table class="table table-hover">
-    <thead style="background-color: #1de35c">
+    <thead style="background-color: #1b53ca">
         <tr>
             <th>Name</th>
             <th>Category</th>
@@ -25,8 +25,8 @@
                     <td><%= products[index].countInStock %></td>
                     <td><%= products[index].price %></td>
                     <td>
-                        <a href="/admin/products/edit/<%= products[index]._id %>" class="btn btn-info">Edit</a>
-                        <a href="/admin/products/delete/<%= products[index]._id %>" class="btn btn-primary">Delete</a>
+                        <a href="/products/edit/<%= products[index]._id %>" class="btn btn-warning">Edit</a>
+                        <a href="/products/delete/<%= products[index]._id %>" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             <% } %>
